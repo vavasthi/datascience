@@ -1,0 +1,14 @@
+/Users/vavasthi/work/data-pipeline/datapipeline-common/src/main/java/com/avasthi/datascience/pipeline/common/pojos/DatasetType.java
+/Users/vavasthi/work/data-pipeline/datapipeline-common/src/main/java/com/avasthi/datascience/pipeline/common/pojos/InputSource.java
+/Users/vavasthi/work/data-pipeline/datapipeline-common/src/main/java/com/avasthi/datascience/pipeline/common/pojos/DatasetDefinitionCreatePojo.java
+/Users/vavasthi/work/data-pipeline/datapipeline-common/src/main/java/com/avasthi/datascience/pipeline/common/pojos/JobStatus.java
+/Users/vavasthi/work/data-pipeline/datapipeline-common/src/main/java/com/avasthi/datascience/pipeline/common/utils/Constants.java
+/Users/vavasthi/work/data-pipeline/datapipeline-common/src/main/java/com/avasthi/datascience/pipeline/common/utils/DependencyUtils.java
+/Users/vavasthi/work/data-pipeline/datapipeline-common/src/main/java/com/avasthi/datascience/pipeline/common/pojos/DatasetDefinitionSchema.java
+/Users/vavasthi/work/data-pipeline/datapipeline-common/src/main/java/com/avasthi/datascience/pipeline/common/pojos/InputSourceCreatePojo.java
+/Users/vavasthi/work/data-pipeline/datapipeline-common/src/main/java/com/avasthi/datascience/pipeline/common/pojos/JobResponse.java
+/Users/vavasthi/work/data-pipeline/datapipeline-common/src/main/java/com/avasthi/datascience/pipeline/common/pojos/JobLog.java
+/Users/vavasthi/work/data-pipeline/datapipeline-common/src/main/java/com/avasthi/datascience/pipeline/common/pojos/DatasetDefinitionSchemaCreatePojo.java
+/Users/vavasthi/work/data-pipeline/datapipeline-common/src/main/java/com/avasthi/datascience/pipeline/common/pojos/InputSourceType.java
+/Users/vavasthi/work/data-pipeline/datapipeline-common/src/main/java/com/avasthi/datascience/pipeline/common/pojos/DatasetDefinition.java
+/Users/vavasthi/work/data-pipeline/datapipeline-common/src/main/java/com/avasthi/datascience/pipeline/common/pojos/JobContext.java

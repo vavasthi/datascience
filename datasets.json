@@ -1,0 +1,193 @@
+[
+    {
+        "id": "5218f15b-8111-4582-95ee-f759eb481e76",
+        "name": "certification_status_fact",
+        "inputSourceId": "9ffd8970-71b9-4db7-bd0d-f6d18841c948",
+        "inputSource": {
+            "id": "9ffd8970-71b9-4db7-bd0d-f6d18841c948",
+            "name": "captivate",
+            "dbName": "captivate",
+            "type": "POSTGRESQL",
+            "username": "cprime",
+            "password": "cprime123",
+            "hostname": "avasthiniummini",
+            "portNumber": 5432
+        },
+        "type": "PRIMARY",
+        "tableName": "certification_status_fact",
+        "query": "select * from certification_status_fact",
+        "dependentOn": []
+    },
+    {
+        "id": "60505330-2673-4363-9e43-aac6264a4199",
+        "name": "certification_state_dimension",
+        "inputSourceId": "9ffd8970-71b9-4db7-bd0d-f6d18841c948",
+        "inputSource": {
+            "id": "9ffd8970-71b9-4db7-bd0d-f6d18841c948",
+            "name": "captivate",
+            "dbName": "captivate",
+            "type": "POSTGRESQL",
+            "username": "cprime",
+            "password": "cprime123",
+            "hostname": "avasthiniummini",
+            "portNumber": 5432
+        },
+        "type": "PRIMARY",
+        "tableName": "certification_state_dimension",
+        "query": "select * from certification_state_dimension",
+        "dependentOn": []
+    },
+    {
+        "id": "72370595-ac6d-4893-a7b7-3c69a0878c7d",
+        "name": "user",
+        "inputSourceId": "1a88a5d6-41d8-407e-a395-e825ec289014",
+        "inputSource": {
+            "id": "1a88a5d6-41d8-407e-a395-e825ec289014",
+            "name": "captivateDb",
+            "dbName": "cprime",
+            "type": "MYSQL",
+            "username": "cprime",
+            "password": "cprime123",
+            "hostname": "avasthiniummini",
+            "portNumber": 3306
+        },
+        "type": "PRIMARY",
+        "tableName": "user",
+        "query": "select * from user",
+        "dependentOn": []
+    },
+    {
+        "id": "82ce6361-babd-41eb-a082-da2ac92b4499",
+        "name": "user_dimension",
+        "inputSourceId": "9ffd8970-71b9-4db7-bd0d-f6d18841c948",
+        "inputSource": {
+            "id": "9ffd8970-71b9-4db7-bd0d-f6d18841c948",
+            "name": "captivate",
+            "dbName": "captivate",
+            "type": "POSTGRESQL",
+            "username": "cprime",
+            "password": "cprime123",
+            "hostname": "avasthiniummini",
+            "portNumber": 5432
+        },
+        "type": "PRIMARY",
+        "tableName": "user_dimension",
+        "query": "select * from user_dimension",
+        "dependentOn": []
+    },
+    {
+        "id": "e97b81b2-da56-4fca-936f-250d3396a0bc",
+        "name": "certification_user",
+        "inputSourceId": "2ce45379-6afa-4851-8bf5-883cffccbb3e",
+        "inputSource": {
+            "id": "2ce45379-6afa-4851-8bf5-883cffccbb3e",
+            "name": "internal",
+            "dbName": "internal",
+            "type": "INTERNAL",
+            "username": "none",
+            "password": "none",
+            "hostname": "avasthiniummini",
+            "portNumber": -1
+        },
+        "type": "DERIVED",
+        "tableName": "certification_user",
+        "query": "select email, first_name, last_name, certification_state from user as u, certification_status_fact as csf, user_dimension as ud, certification_state_dimension as csd where csf.user_did = ud.user_did and u.user_id = ud.user_id and csd.certification_state_did = csf.certification_success_status_did",
+        "dependentOn": [
+            {
+                "id": "82ce6361-babd-41eb-a082-da2ac92b4499",
+                "name": "user_dimension",
+                "inputSourceId": "9ffd8970-71b9-4db7-bd0d-f6d18841c948",
+                "inputSource": {
+                    "id": "9ffd8970-71b9-4db7-bd0d-f6d18841c948",
+                    "name": "captivate",
+                    "dbName": "captivate",
+                    "type": "POSTGRESQL",
+                    "username": "cprime",
+                    "password": "cprime123",
+                    "hostname": "avasthiniummini",
+                    "portNumber": 5432
+                },
+                "type": "PRIMARY",
+                "tableName": "user_dimension",
+                "query": "select * from user_dimension",
+                "dependentOn": []
+            },
+            {
+                "id": "72370595-ac6d-4893-a7b7-3c69a0878c7d",
+                "name": "user",
+                "inputSourceId": "1a88a5d6-41d8-407e-a395-e825ec289014",
+                "inputSource": {
+                    "id": "1a88a5d6-41d8-407e-a395-e825ec289014",
+                    "name": "captivateDb",
+                    "dbName": "cprime",
+                    "type": "MYSQL",
+                    "username": "cprime",
+                    "password": "cprime123",
+                    "hostname": "avasthiniummini",
+                    "portNumber": 3306
+                },
+                "type": "PRIMARY",
+                "tableName": "user",
+                "query": "select * from user",
+                "dependentOn": []
+            },
+            {
+                "id": "5218f15b-8111-4582-95ee-f759eb481e76",
+                "name": "certification_status_fact",
+                "inputSourceId": "9ffd8970-71b9-4db7-bd0d-f6d18841c948",
+                "inputSource": {
+                    "id": "9ffd8970-71b9-4db7-bd0d-f6d18841c948",
+                    "name": "captivate",
+                    "dbName": "captivate",
+                    "type": "POSTGRESQL",
+                    "username": "cprime",
+                    "password": "cprime123",
+                    "hostname": "avasthiniummini",
+                    "portNumber": 5432
+                },
+                "type": "PRIMARY",
+                "tableName": "certification_status_fact",
+                "query": "select * from certification_status_fact",
+                "dependentOn": []
+            },
+            {
+                "id": "60505330-2673-4363-9e43-aac6264a4199",
+                "name": "certification_state_dimension",
+                "inputSourceId": "9ffd8970-71b9-4db7-bd0d-f6d18841c948",
+                "inputSource": {
+                    "id": "9ffd8970-71b9-4db7-bd0d-f6d18841c948",
+                    "name": "captivate",
+                    "dbName": "captivate",
+                    "type": "POSTGRESQL",
+                    "username": "cprime",
+                    "password": "cprime123",
+                    "hostname": "avasthiniummini",
+                    "portNumber": 5432
+                },
+                "type": "PRIMARY",
+                "tableName": "certification_state_dimension",
+                "query": "select * from certification_state_dimension",
+                "dependentOn": []
+            }
+        ]
+    },
+    {
+        "id": "ea066f80-9034-43ed-ba70-8f477d9665f2",
+        "name": "enrollment",
+        "inputSourceId": "1a88a5d6-41d8-407e-a395-e825ec289014",
+        "inputSource": {
+            "id": "1a88a5d6-41d8-407e-a395-e825ec289014",
+            "name": "captivateDb",
+            "dbName": "cprime",
+            "type": "MYSQL",
+            "username": "cprime",
+            "password": "cprime123",
+            "hostname": "avasthiniummini",
+            "portNumber": 3306
+        },
+        "type": "PRIMARY",
+        "tableName": "enrollment",
+        "query": "select * from enrollment",
+        "dependentOn": []
+    }
+]
